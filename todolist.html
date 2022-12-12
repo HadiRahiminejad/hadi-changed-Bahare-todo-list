@@ -7,7 +7,7 @@
   </head>
   <body>
       <!-- <img class="img" src="./purplebg.png" alt=""> -->
-      <div class="main">
+      
         <div class="container">
           <p>Hello, Welcome to To Do List Online Website</p>
           <div class="content">
@@ -16,7 +16,6 @@
             <ul id="task-list"></ul>
           </div>
         </div>
-      </div>
       <footer>
         <div class="img"></div>
       </footer>
@@ -45,12 +44,17 @@ function addTask() {
         taskList.appendChild(taskItems);
         setTimeout(() => {
           taskItemStyle.opacity = "1";  
+          
         }, 1);
 
       function delTask() {
-        taskItemStyle.opacity = "0";  
+        taskItemStyle.opacity = "0"; 
+        setTimeout(() => {
+          taskItems.remove();
+        }, 1000)
         }
         delBtn.addEventListener("click", delTask);
+        
         function Done() {
             taskItems.classList.toggle("done");
         }
